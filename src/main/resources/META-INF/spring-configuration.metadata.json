@@ -1,0 +1,24 @@
+{
+  "groups": [
+    {
+      "name": "algorand.account",
+      "type": "properties.AccountProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "algorand.account.mnemonic",
+      "type": "java.lang.String",
+      "description": "The 25 word mnemonic string to initialize an account"
+    },
+    {
+      "name": "algorand.account.seed",
+      "type": "java.lang.String",
+      "description": "The 32 byte array required to initialize and account"
+    }
+  ],
+  "hints": [
+    {
+    }
+  ]
+}
