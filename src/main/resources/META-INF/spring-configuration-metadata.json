@@ -1,0 +1,28 @@
+{
+  "groups": [
+    {
+      "name": "algorand.account",
+      "type": "properties.AccountProperties"
+    },
+    {
+      "name": "algorand.algodClient",
+      "type": "properties.AlgodClientProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "algorand.account.mnemonic",
+      "type": "java.lang.String",
+      "description": "The 25 word mnemonic string to initialize an account"
+    },
+    {
+      "name": "algorand.algodclient.apiaddress",
+      "type": "java.lang.String",
+      "description": "The Algod host to connect to."
+    }
+  ],
+  "hints": [
+    {
+    }
+  ]
+}
