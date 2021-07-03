@@ -5,13 +5,33 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties(prefix = "algorand.algodclient")
 public class AlgodClientProperties {
 
-    public String getApiAddress() {
-        return apiAddress;
+    private String port;
+    private String host;
+    private String token;
+
+    public String getPort() {
+        return port;
     }
 
-    public void setApiAddress(String apiAddress) {
-        this.apiAddress = apiAddress;
+    public void setPort(String port) {
+        this.port = port;
     }
 
-    private String apiAddress;
+    public String getHost() {
+        return host;
+    }
+
+    public void setHost(String host) {
+        this.host = host;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+
 }

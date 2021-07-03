@@ -12,9 +12,15 @@ public class AlgodClientConfigTest {
     void apiBaseCanBeConfigured() {
         final ApplicationContextRunner contextRunner = new ApplicationContextRunner()
                 .withConfiguration(AutoConfigurations.of(AlgodClientConfig.class));
-        contextRunner.withPropertyValues("algorand.algodclient.apiaddress=http://localhost:8080").run((context -> {
-            assertThat(context).hasSingleBean(AlgodClientConfig.class);
-            assertThat(context.getBean(AlgodClientProperties.class).getApiAddress()).isEqualTo("http://localhost:8080");
-        }));
+        contextRunner.withPropertyValues("algorand.algodclient.host=http://localhost",
+                "algorand.algodclient.port=4001",
+                "algorand.algodclient.token=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa").run(
+                (context -> {
+                    assertThat(context).hasSingleBean(AlgodClientConfig.class);
+                    assertThat(context.getBean(AlgodClientProperties.class).getHost()).isEqualTo("http://localhost");
+                    assertThat(context.getBean(AlgodClientProperties.class).getPort()).isEqualTo("4001");
+                    assertThat(context.getBean(AlgodClientProperties.class).getToken()).isEqualTo(
+                            "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+                }));
     }
 }
