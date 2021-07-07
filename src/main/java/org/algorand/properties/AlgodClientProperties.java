@@ -8,6 +8,7 @@ public class AlgodClientProperties {
     private String port;
     private String host;
     private String token;
+    private String apiKey;
 
     public String getPort() {
         return port;
@@ -33,5 +34,12 @@ public class AlgodClientProperties {
         this.token = token;
     }
 
+    public String getApiKey() {
+        return apiKey;
+    }
+
+    public void setApiKey(String apiKey) {
+        this.apiKey = apiKey;
+    }
 
 }
